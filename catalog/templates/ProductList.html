@@ -1,0 +1,32 @@
+<%inherit file="app_base.html" />
+
+<%block name="content">
+<a href="/catalog/create" class="btn btn-info" role="button">Create New Product</a>
+  <table class="table"/>
+  <thead>
+    <tr>
+        <th>Name</th>
+        <th>Status</th>
+        <th>Category</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Edit/Delete</th>
+    </tr>
+</thead>
+  <tbody>
+    <tr>
+        %for p in product:
+        <td>${p.name}</td>
+        <td>${p.status}</td>
+        <td>${p.category}</td>
+        <td>${p.price}</td>
+        %if p.category == 'BulkProduct':
+        <td>${p.quantity}</td>
+      %else:
+        <td>1</td>
+      %endif
+        <td><a href="/catalog/update/${p.id}/">Edit</a> | <a href="/catalog/delete/${p.id}/">Delete</a></td>
+    </tr>
+  </tbody>
+%endfor
+</%block>

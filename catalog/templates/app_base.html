@@ -1,0 +1,27 @@
+
+<%inherit file="/homepage/templates/base.htm" />
+<%block name = "maintainence">
+    <p align="center">Site may be slow due to maintainence</p>
+</%block>
+<%block name = "menu">
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <img src="http://hdwallpapersrocks.com/wp-content/uploads/2013/11/Heart-music-icon-awesome-music-love-wallpapers.jpg" id = "icon"/>
+        </div>
+        <ul class="nav navbar-nav">
+          <li class = ${'active' if request.dmp_router_page =='index' else ''} ><a href="/index/">Home</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+        <span class="caret"></span></a>
+      </li>
+        </ul>
+      </div>
+    </nav>
+</%block>
+<%block name = "footerContent">
+<p align="center">&copy</p>
+</%block>
+
+
+
